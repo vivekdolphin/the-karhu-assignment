@@ -1,0 +1,132 @@
+.banner_content {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.banner-img-fill{
+  position: relative;
+}
+.banner-img-fill img {
+  width: 100%;
+}
+.bottom_top_off{
+  position: absolute;
+  bottom: 5%;
+  left: 48%;
+  transform: rotate(90deg);
+}
+.bottom_top_off:before {
+  content: "";
+  display: block;
+  width: 46px;
+  background-image:url({{ 'Union.png' | asset_url }});
+  background-repeat: no-repeat;
+  background-size: inherit;
+  background-position: center;
+  height: 46px;
+  font-size: 33px;
+  opacity: 1;
+  font-family: unset;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.banner_info {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.banner_info {
+  width: 100%;
+  max-width: 1180px;
+}
+.banner_button a{
+  font-family: 'gt_americaregular';
+  display: block;
+  max-width: 238px;
+  min-width: 238px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: center;
+  text-decoration: none;    
+  text-transform: capitalize;
+  margin: 0 auto;
+  padding: 14px 0;
+}
+.banner_details {
+  text-align: center;
+}
+.banner_details h3 {  
+  font-weight: bold;
+  line-height: 130px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'gt_americabold';
+  margin-bottom: 35px;
+}
+
+
+
+
+@media only screen and (max-width:1280px) {
+  .banner_info {       
+    max-width: 1000px;
+  }
+  .banner_details h3 {
+    font-size: 120px;
+    line-height: 124px;
+  }
+}
+
+@media only screen and (max-width:991px) {
+  .banner_info {       
+    max-width: 700px;
+  }
+  .banner_details h3 {
+    font-size: 87px;
+    line-height: 98px;
+  }
+}
+@media only screen and (min-width:768px) { 
+  .banner_image.moblie {
+    display: none;
+  }
+}
+@media only screen and (max-width:767px) {  
+
+  .banner_image.desktop {
+    display: none;
+  }
+  .banner_info {
+    max-width: 430px;
+  }
+  .banner_details h3 {
+    font-size: 52px;
+    line-height: 62px;
+  }
+  .product_section {
+    margin: 15px 0 15px;
+    padding: 15px 0 25px;
+  }
+}
+
+@media only screen and (max-width:576px) {
+  .banner_info {
+    max-width: 300px;
+  }
+  .banner_details h3 {
+    font-size: 38px;
+    line-height: 48px;
+  }
+
+}
+@media only screen and (max-width: 350px){
+  .banner_details h3 {
+    font-size: 34px;
+  }
+}
