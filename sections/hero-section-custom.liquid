@@ -1,0 +1,209 @@
+ {{ 'hero-section-custom.css' | asset_url | stylesheet_tag }}
+
+
+<div class="banner_section">
+  <div class="banner_content">
+    <div class="banner-img-fill">
+      
+      {% if section.settings.image-desktop != blank %}
+        <div class="banner_image desktop">
+          <img class="banner_images" src="{{ section.settings.image-desktop | img_url: 'original' }}" alt="{{ section.settings.image-desktop.alt | default: shop.name }}" >
+        </div>
+      {% endif %}
+      
+      {% if section.settings.image-moblie != blank %}
+        <div class="banner_image moblie">
+          <img class="banner_images" src="{{ section.settings.image-moblie | img_url: 'original' }}" alt="{{ section.settings.image-moblie.alt | default: shop.name }}" >
+        </div>
+      {% endif %}
+      
+      <div class="banner_info">
+        <div class="banner_details">
+          
+          {% if section.settings.title_text != blank %}
+            <div class="banner_head">          
+                <h3 class="banner_head_title">{{ section.settings.title_text }}</h3>          
+            </div>
+          {% endif %}
+          
+          {% if section.settings.button_label != blank %}
+            <div class="banner_button">
+              <a href="{{ section.settings.link}}" class="colletion_btn">{{ section.settings.button_label }}</a>
+            </div> 
+          {% endif %}
+          
+        </div>
+      </div>
+      <div class="bottom_top">
+        <a href="javascript:void(0)" class="bottom_top_off">        
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Hero section",
+  "class": "hero-section-image-title hero-section-custom",
+  "settings": [
+        {
+          "type": "header",
+          "content": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image-desktop",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image-moblie",
+          "label": "Moblie Image"
+        },
+        {
+          "type": "header",
+          "content": "Title and link"
+        },
+        {
+          "type": "text",
+          "id": "title_text",
+          "default": "Title Text",
+          "label": "Head Text"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "Button label",
+          "label": "Button Label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "header",
+          "content": "Title font size"
+        },
+        {
+            "type": "range",
+            "id": "head-font",
+            "label": "Desktop Head Font Size",
+            "default": 50,
+            "min": 0,
+            "max": 160,
+            "step": 2,
+			"unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "head-font-tablet",
+            "label": "Tablet Head Font Size",
+            "default": 50,
+            "min": 0,
+            "max": 130,
+            "step": 2,
+			"unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "head-font-moblie",
+            "label": "Moblie Head Font Size",
+            "default": 50,
+            "min": 0,
+            "max": 70,
+            "step": 1,
+			"unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "button-font-size",
+            "label": "Button Font Size",
+            "default": 16,
+            "min": 0,
+            "max": 30,
+            "step": 1,
+			"unit": "px"
+        },
+        {
+          "type": "header",
+          "content": "Title color"
+        },
+        {
+          "type": "color",
+          "id": "head_color",
+          "label": "Heading color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "btn_title_color",
+          "label": "Button title color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "btn_border_color",
+          "label": "Button border color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "hover_btn_bg_color",
+          "label": "Hover Button background color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "hover_btn_title_color",
+          "label": "Hover Button title color",
+          "default": "#000000"
+        }
+  ],
+
+ "presets": [
+    {
+      "name": "Hero section"
+    }
+  ]
+}
+{% endschema %}
+
+<style>  
+  #shopify-section-{{ section.id }} .banner_details h3 {  
+    color: {{ section.settings.head_color }};
+  }
+  #shopify-section-{{ section.id }} .banner_button a{  
+    color: {{ section.settings.btn_title_color }};
+    border: 1px solid {{ section.settings.btn_border_color }};
+  }
+  #shopify-section-{{ section.id }} .banner_button a{
+    font-size: {{ section.settings.button-font-size }}px;
+  }
+  
+  #shopify-section-{{ section.id }} .banner_button a.colletion_btn:hover {
+    background: {{ section.settings.hover_btn_bg_color }};
+    color: {{ section.settings.hover_btn_title_color }} ;
+  }
+
+  @media only screen and (min-width: 1281px) {
+    #shopify-section-{{ section.id }} .banner_details h3 {  
+      font-size: {{ section.settings.head-font }}px;
+    }
+  }   
+  
+  @media only screen and (max-width: 1024px) and (min-width: 991px) {
+    #shopify-section-{{ section.id }} .banner_details h3 {  
+      font-size: {{ section.settings.head-font-tablet }}px;
+    }
+  } 
+
+  @media only screen and (max-width: 767px) and (min-width: 577px) {
+    #shopify-section-{{ section.id }} .banner_details h3 {  
+      font-size: {{ section.settings.head-font-moblie }}px;
+    }
+  }  
+</style>
+

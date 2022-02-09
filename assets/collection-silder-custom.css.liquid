@@ -1,0 +1,127 @@
+.collection_slider{
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.product-img-fill {
+  position: relative;
+}
+.product-img-fill:hover .product_details a.collection_btn {    
+  font-weight: normal;
+  line-height: 27px;
+  text-align: center;
+  color: #FFFFFF;
+  text-decoration: none;    
+  border: 1px solid #FFFFFF;
+  text-transform: capitalize;
+  max-width: 178px;
+  min-width: 178px;
+  padding: 14px 0;    
+  width: 100%;
+  display: block;  
+}
+.product_button {
+  position: absolute;
+  bottom: 9%;
+  left: 38%;
+  transform: translate(-38%, -5%);
+}
+.product_details h3 {    
+  font-weight: bold;
+  line-height: 40px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  font-family: 'gt_americabold';
+  position: absolute;
+  top: 50%;
+  left: 38%;
+  transform: translate(-30%,-50%);
+  margin: 0;
+}
+.product_section {
+  margin: 30px 0 34px;
+  padding: 30px 0 50px 60px;
+}
+.product_section .slick-next {
+  right: 60px;
+}
+.banner_section .slick-next {
+  right: 30px;
+  bottom: 7%;
+  top: unset;
+  left: 50%;
+  transform: rotate(90deg);
+}
+.product_section .slick-next:before,
+.product_section .slick-prev:before {
+  font-family: unset;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+.product_section .slick-next:before {
+  content: "";
+  display: block;
+  width: 46px;
+  background-image:url({{ 'Union.png' | asset_url }});
+  background-repeat: no-repeat;
+  background-size: inherit;
+  background-position: center;
+  height: 46px;
+  font-size: 33px;
+  opacity: 1;
+}
+.product_section .slick-prev:before {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 46px;
+  font-size: 33px;
+  background-image:url({{ 'imageleft.png' | asset_url }});
+  background-repeat: no-repeat;
+  background-size: inherit;
+  background-position: center;
+
+  opacity: 1;
+}
+.product_section .product_section .slick-slide img {    
+  max-width: 100%;
+}
+.product_section .slick-prev.slick-arrow.slick-disabled {
+  z-index: 0;
+}
+.product_section .slick-prev.slick-arrow {
+  z-index: 9;
+  left: 33px;
+}
+.product_details a.collection_btn {
+	display: none;
+}
+
+@media only screen and (max-width:767px) {   
+  .product_section {
+    margin: 15px 0 15px;
+    padding: 15px 0 25px;
+  }
+  .product_section .slick-slide {
+    padding-right: 15px;
+  }
+  .collection_image img.collection-img {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:576px) {
+  .product_section .slick-slide {
+    padding-right: 15px;
+  }
+}
+@media (min-width:768px) {
+img.collection-img {
+    width: 100%;
+}
+.product_section .slick-slide {
+    padding-right: 60px;
+  }
+}

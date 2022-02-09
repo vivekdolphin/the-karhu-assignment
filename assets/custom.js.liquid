@@ -1,0 +1,9 @@
+/* section start - Hero */
+  $(document).on('click','a.bottom_top_off', function(e){
+	e.preventDefault();    
+   		var destination = $(this).parents('.hero-section-custom').next('.collection-silder-custom');
+      $('html, body').animate({
+            scrollTop: destination.offset().top
+      }, '1000' );
+  });
+/* section end - Hero */
